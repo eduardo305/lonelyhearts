@@ -7,8 +7,9 @@ export class User {
   public gender: string;
   public email: string;
   public phone: string;
+  public dob: DOB;
 
-  constructor({ id, name, picture, nat, gender, email, phone }) {
+  constructor({ id, name, picture, nat, gender, email, phone, dob }) {
     this.id = new Id(id);
     this.name = new Name(name);
     this.picture = new Picture(picture);
@@ -16,6 +17,7 @@ export class User {
     this.gender = gender;
     this.email = email;
     this.phone = phone;
+    this.dob = new DOB(dob);
   }
 
   getFullName() {
@@ -54,6 +56,16 @@ class Id {
   constructor({ name, value }) {
     this.name = name;
     this.value = value;
+  }
+}
+
+class DOB {
+  private age: number;
+  private date: string;
+
+  constructor({ age, date }) {
+    this.age = age;
+    this.date = date;
   }
 }
 

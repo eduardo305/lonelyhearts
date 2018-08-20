@@ -1,4 +1,7 @@
-<p>
-  <ul *ngFor="let user of users">
+<ul class="user-list"
+>
+  <li *ngFor="let user of users | filterBy: selectedFilters">
     <app-user [user]="user"></app-user>
-  </ul>
+  </li>
+</ul>
+

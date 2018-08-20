@@ -1,0 +1,30 @@
+.control {
+  margin-bottom: 20px;
+}
+
+input.search {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 12pt;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+select {
+  box-sizing: border-box;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 12pt;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}

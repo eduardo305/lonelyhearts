@@ -10,10 +10,24 @@ import { User } from '../user.model';
 export class UserListComponent implements OnInit {
 
   public users: User[];
+  public selectedQty = 50;
+  public qtyOptions: Array<number> = [5, 10, 20, 50];
+  public selectedGender = 'female';
+  private selectedFilters = '';
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService) {
+    this._userService.filterSubject.subscribe(data => this.selectedFilters = data );
+  }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe((users) => this.users = users);
+    this.getUsers(this.selectedQty, this.selectedGender);
+  }
+
+  getUsers(qty, gender) {
+    this._userService.getUsers(qty, gender).subscribe((users) => this.users = users);
+  }
+
+  onSelectedQty() {
+    this.getUsers(this.selectedQty, this.selectedGender);
   }
 }

@@ -1,0 +1,25 @@
+<div>
+  <form id="facets">
+    <div class="control">
+      <input
+        type="text"
+        name="search"
+        class="search"
+        [(ngModel)]="filters.term"
+        (keyup)="onSearch($event)"
+      />
+    </div>
+
+    <div class="control">
+      <label>Filter by age: </label>
+      <select  name="age"
+        [(ngModel)]="filters.age"
+        (change)="onAgeSelect()"
+      >
+        <option *ngFor="let age of ageRanges" [value]="age.value">
+          {{ age.display }}
+        </option>
+      </select>
+    </div>  
+  </form>
+</div>
